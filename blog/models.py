@@ -5,6 +5,8 @@ from django.utils import timezone
 class Post(models.Model):
     STATUS_CHOICES=(('draft','Draft'),('published','Published'))
     title=models.CharField(max_length=256)
+
+    # ------------------------------------------slug is for URL freindly(for SEO)---------------------------------------------------------------------
     slug = models.SlugField(max_length=264, unique_for_date='publish')
     author=models.ForeignKey(User, related_name='blog_posts')
     body= models.TextField()
@@ -16,6 +18,7 @@ class Post(models.Model):
     status = models.CharField(max_length=100, choices=STATUS_CHOICES,default='draft')
 
     class Meta:
+        # ----------------( - this is for descending order)[-publish]-----------------
         ordering=('-publish',)
 
 

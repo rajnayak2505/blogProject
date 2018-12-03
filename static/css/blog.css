@@ -1,0 +1,30 @@
+body{
+  background: #D0DCE8;
+}
+.content{
+  width: 70%;
+  float: left;
+  padding: 0 0 0 30px;
+  background: #48C9B0;
+  height: 100%;
+}
+
+.sidebar{
+  width: 30%;
+  float: right;
+  padding: 10px;
+  background: #2E4053;
+  height: 100%;
+  color: white;
+}
+
+h1{
+  text-align: center;
+  border-bottom: 1px sloid white;
+  padding-bottom: 10px;
+}
+#date{
+  color: #FF5733;
+  font-size: 12px;
+  font-style: italic;
+}
