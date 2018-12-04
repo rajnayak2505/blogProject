@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+
+# ------------------this is for reverse----------------
+from django.core.urlresolvers import reverse
 # Create your models here.
 class Post(models.Model):
     STATUS_CHOICES=(('draft','Draft'),('published','Published'))
@@ -24,3 +27,35 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    # ---------------------------when we use canonical url we have declare get_absolute_url-----------------
+    def get_absolute_url(self):
+        return reverse('post_detail',args=[self.publish.year,self.publish.strftime('%m'),self.publish.strftime('%d'),self.slug])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ----------------------------------------------------------
